@@ -16,6 +16,9 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "no-useless-constructor": "off",
+        "require-jsdoc": "off",
+        "new-cap": "off"
     }
 }
