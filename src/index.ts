@@ -1,7 +1,7 @@
 import express from "express";
 const app = express();
 import dotenv from "dotenv";
-import { usersRoutes } from "./routes/UsersRotues";
+import { usersRoutes } from "./routes/usersRotues";
 
 dotenv.config();
 
