@@ -22,4 +22,25 @@ export class MySqlUsersRepository implements IUsersRepository {
       team_lead: user.teamLead,
     });
   }
+
+  async getUser(user: string): Promise<User> {
+    const resUser = await knex("users").where({ user: user });
+
+    if (!resUser.length) {
+      throw new Error("User not exists.");
+    }
+
+    const usr = new User(
+      resUser[0].name,
+      resUser[0].last_name,
+      resUser[0].user,
+      resUser[0].email,
+      resUser[0].password,
+      resUser[0].phone_number,
+      resUser[0].area,
+      resUser[0].team_lead
+    );
+
+    return usr;
+  }
 }
